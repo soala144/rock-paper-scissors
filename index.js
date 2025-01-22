@@ -2,7 +2,7 @@ let computerScore = 0;
 let userScore = 0;
 let draw = 0;
 let round = 10;
-
+const container = document.getElementById("container")
 const button = document.querySelectorAll("button")
 // Generate computer's choice
 const choices = ["rock", "paper", "scissors"];
@@ -25,6 +25,23 @@ function determineWinner(userChoice, computerChoice) {
     } else {
         return "computer";
     }
+}
+
+// timer
+function startCountdown(){
+    let countdown = 10
+    const paragraph = document.createElement("p")
+    container.appendChild(paragraph)
+
+    const timer = setInterval(() => {
+        paragraph.textContent = `Game will restart in ${countdown} seconds ...`
+        if(countdown === 0){
+          clearInterval(timer)
+          window.location.reload()
+        }
+        countdown--
+
+    }, 1000)
 }
 
 // disableButtons 
@@ -61,10 +78,26 @@ button.forEach((button) => {
         // display the trials left
 
         const message = document.getElementById("choice")
-        const container = document.getElementById("container")
-        message.textContent = `Trials left:${round}`
+        
+        message.textContent = `Trials left: ${round}`
         if(round === 0){
+            let value = ""
+            if(userScore > computerScore){
+                value = "You win"
+            }else if(computerScore > userScore){
+                value= "Ohh chim you don loose"
+            }else{
+                value ="It's a tie"
+            }
             disableButtons()
+            container.innerHTML=""
+            container.classList.add("second")
+            container.innerHTML= `
+             <h1>Game Over</h1>
+             ${value}
+            `
+            startCountdown()
+           
         }
     });
 });
