@@ -1,8 +1,3 @@
-Here’s your README.md file ready for copy-pasting:
-
-
----
-
 Rock Paper Scissors Game
 
 A fun and interactive Rock Paper Scissors game built with HTML, CSS, and JavaScript. Challenge the computer, track your score, and see who emerges victorious after 10 rounds!
