@@ -2,7 +2,6 @@ Rock Paper Scissors Game
 
 A fun and interactive Rock Paper Scissors game built with HTML, CSS, and JavaScript. Challenge the computer, track your score, and see who emerges victorious after 10 rounds!
 
-
 ---
 
 Features
@@ -18,8 +17,6 @@ Displays the winner after each round.
 Automatic page refresh after a 10-second countdown when the game ends.
 
 Limited to 10 rounds per session to keep gameplay concise.
-
-
 
 ---
 
